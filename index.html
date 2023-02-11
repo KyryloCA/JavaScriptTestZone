@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+  <textarea id="message" class="materialize-textarea" rows="5">Default textarea message</textarea>
+
+  <div>
+    <a href="/home" class="btn">home</a>
+    <a href="/about" class="btn active">about</a>
+    <a href="/gallery" class="btn">gallery</a>
+  </div>
+  
+  <br>
+  <img class="image" src="https://placeimg.com/640/480/animals" alt="" width="320" />
+  
+  
+
+      
+      
+  <script>
+
+//===================================================
+const message = document.querySelector("#message");
+console.log(message.value); // Default textarea message
+message.value = "good morning";
+
+//===================================================
+const activeLink = document.querySelector(".btn.active");
+activeLink.subcase = 5;
+console.log(activeLink.href); // https://s.codepen.io/about
+console.log(`------------------------------------------------`);
+console.log(activeLink); // https://s.codepen.io/about
+console.log(`------------------------------------------------`);
+console.log(`host is = ${activeLink.host}`);
+console.log(`------------------------------------------------`);
+console.log(Object.keys(activeLink));
+console.log(`--------------------here------------------------`);
+for (key in activeLink.children){if (Object[key] !== undefined){console.log(`${key} contains --- ${Object[key]}`);}};
+console.log(`-------------------other--all------------------------`);
+for (key in activeLink.children){console.log(`${key} contains --- ${Object[key]}`);};
+//===================================================
+const image = document.querySelector(".image");
+console.log(image.src); // https://placeimg.com/640/480/animals
+image.src = 'https://placeimg.com/640/480/tech';
+
+
+  </script>
+  
+</body>
+
+</html>

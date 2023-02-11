@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <H1>function debug</H1>
+<button type="button"> press me </button>
+<ul class="firstclass secondclass thirdclass">Список ненужных вещей
+<li >Тряпка</li>
+<li>Ботинок</li>
+<li>Веревка</li>
+</ul>
+<button type="button" class="btn" data-action="close">Close</button>
+
+    <script>
+function testFunction(){
+    alert('Дороу!')
+}
+var inp = document.querySelector("[type='button']");
+inp.addEventListener('click', testFunction);
+
+function includes(array, value) {
+  // Change code below this line
+for (let searchItem=0; searchItem <= array.length - 1; searchItem++){
+    
+if (array[searchItem] === value){
+    
+    return true;
+}
+
+
+}
+return false;
+  // Change code above this line
+}
+
+
+
+        function findLongestWord(string) {
+  // Change code below this line
+const phraseToWords = string.split(" ");
+  var maxWordLength = 0;
+  var longestWord = "";
+  for (let i = 0; i < (phraseToWords.length - 1); i++) {
+    if (phraseToWords[i].length > maxWordLength) {
+      maxWordLength = phraseToWords[i].length;
+      longestWord = phraseToWords[i];
+    } 
+  }
+return longestWord;
+
+  // Change code above this line
+}
+
+
+
+const products = [
+  { name: "Radar", price: 1300, quantity: 4 },
+  { name: "Scanner", price: 2700, quantity: 3 },
+  { name: "Droid", price: 400, quantity: 7 },
+  { name: "Grip", price: 1200, quantity: 9 },
+];
+
+function calculateTotalPrice(productName) {
+  // Пиши код ниже этой строки
+  let totalPrice = 0;
+for (let item of products) {
+  if (item["name"] === productName) {
+    console.log("we have this")
+    totalPrice = (item["price"] * item["quantity"] );
+  }
+}
+
+return totalPrice;
+  // Пиши код выше этой строки
+}
+
+
+
+
+
+function makeTask(data) {
+  const completed = false;
+  const category = "General";
+  const priority = "Normal";
+  // Change code below this line
+const modedData = {completed: false, category:"General",priority:"Normal",...data };
+  return modedData;
+  
+  // Change code above this line
+}
+
+
+
+
+const atTheOldToad = {
+  potions: [
+    { name: "Speed potion", price: 460 },
+    { name: "Dragon breath", price: 780 },
+    { name: "Stone skin", price: 520 },
+  ],
+  // Change code below this line
+  getPotions() {
+          return this.potions;  
+  },
+
+ 
+
+  addPotion(newPotion) {
+    // let potionExist = false;
+       for (let eachPotion of this.potions) {
+          if (eachPotion.name === newPotion.name) {
+              // potionExist = true;
+              return `Error! Potion ${newPotion.name} is already in your inventory!`;
+          }
+        }
+  this.potions.push(newPotion); 
+  console.log(`Potion ${newPotion.name} was added`);
+  },
+
+  removePotion(potionName) {
+    for(let i=0; i<=this.potions.length-1; i++){
+       if (this.potions[i].name === potionName){
+        this.potions.splice(i,1);
+        return `Potion ${potionName} removed`; 
+        }
+    }
+  return `Potion ${potionName} is not in inventory!`;
+  },
+
+  updatePotionName(oldName, newName) {
+    for(let i=0; i<=this.potions.length-1; i++){
+       if (this.potions[i].name === oldName){
+        this.potions[i].name = newName ;
+        return `Potion ${oldName} replaced ${newName}`;
+       }
+    }
+  return `Potion ${oldName} is not in inventory!`;
+  },
+
+  // Change code above this line
+};
+
+
+// const numbers = [1, 2, 3, 4, 5];
+// console.log(numbers); 
+// const filteredNumbers = numbers.filter(value => value > 3);
+// console.log(`this is answer ${filteredNumbers}`); 
+
+//встроенная функция колбэк
+
+// function deliverPizza(abba) {
+//   return `Delivering ${abba} pizza.`;
+// }
+
+// function makePizza(goblin) {
+//   return `Pizza ${goblin} is being prepared, please wait...`;
+// }
+
+// // Chande code below this line
+// function makeMessage(pizzaName, callback) {
+//   return callback(pizzaName);
+// }
+
+
+function filterArray(numbers, value) {
+  const filteredNumbers = [];
+  // Change code below this line
+
+  numbers.forEach(function call(i) {
+    if (i > value) {
+      filteredNumbers.push(i);
+    }
+  });
+ 
+
+  // Change code above this line
+  return filteredNumbers;
+}
+
+
+function changeEven(numbers, value) {
+  // Change code below this line
+  let newArray = [];
+  numbers.forEach ((suka) => {
+    if (suka % 2 === 0) {
+      newArray.push(suka + value);
+    }
+  });
+  console.log (newArray);
+  console.log (numbers);
+  // Change code above this line
+}
+
+
+// const planets = ["Earth", "Mars", "Venus", "Jupiter"];
+// // Change code below this line
+// let planetsLengths = [];
+// planetsLengths =  planets.map((chlen) => chlen.length);
+// console.log(planetsLengths);
+
+
+
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     rating: 8.38,
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     rating: 8.51,
+//   },
+//   {
+//     title: "The Dream of a Ridiculous Man",
+//     author: "Fyodor Dostoevsky",
+//     rating: 7.75,
+//   },
+//   { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+//   { title: "Enemy of God", author: "Bernard Cornwell", rating: 8.67 },
+// ];
+// // Change code below this line
+
+// const titles = books.map((item) => item.title);
+
+// console.log(titles);
+
+// const ultras = [
+//   {
+//     name: "Moore Hensley",
+//     email: "moorehensley@indexia.com",
+//     eyeColor: "blue",
+//     friends: ["Sharron Pace"],
+//     isActive: false,
+//     balance: 2811,
+//     gender: "male",
+//     age: 37
+//   },
+//   {
+//     name: "Sharlene Bush",
+//     email: "sharlenebush@tubesys.com",
+//     eyeColor: "blue",
+//     friends: ["Briana Decker", "Sharron Pace"],
+//     isActive: true,
+//     balance: 3821,
+//     gender: "female",
+//     age: 34
+//   },
+//   {
+//     name: "Ross Vazquez",
+//     email: "rossvazquez@xinware.com",
+//     eyeColor: "green",
+//     friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+//     isActive: false,
+//     balance: 3793,
+//     gender: "male",
+//     age: 24
+//   },
+//   {
+//     name: "Elma Head",
+//     email: "elmahead@omatom.com",
+//     eyeColor: "green",
+//     friends: ["Goldie Gentry", "Aisha Tran"],
+//     isActive: true,
+//     balance: 2278,
+//     gender: "female",
+//     age: 21
+//   },
+//   {
+//     name: "Carey Barr",
+//     email: "careybarr@nurali.com",
+//     eyeColor: "blue",
+//     friends: ["Jordan Sampson", "Eddie Strong"],
+//     isActive: true,
+//     balance: 3951,
+//     gender: "male",
+//     age: 27
+//   },
+//   {
+//     name: "Blackburn Dotson",
+//     email: "blackburndotson@furnigeer.com",
+//     eyeColor: "brown",
+//     friends: ["Jacklyn Lucas", "Linda Chapman"],
+//     isActive: false,
+//     balance: 1498,
+//     gender: "male",
+//     age: 38
+//   },
+//   {
+//     name: "Sheree Anthony",
+//     email: "shereeanthony@kog.com",
+//     eyeColor: "brown",
+//     friends: ["Goldie Gentry", "Briana Decker"],
+//     isActive: true,
+//     balance: 2764,
+//     gender: "female",
+//     age: 39
+//   }
+// ];
+// const minA = 80;
+// const maxA = 100;
+
+// const getUsersWithAge = (users, minAge, maxAge) => {
+
+// const a = users.filter((item) => item.age > minAge && item.age < maxAge);
+// console.log(a);
+// };
+
+const monks = [
+  {
+    name: "Moore Hensley",
+    email: "moorehensley@indexia.com",
+    eyeColor: "blue",
+    friends: ["Sharron Pace"],
+    isActive: false,
+    balance: 2811,
+    gender: "male",
+    age: 37
+  },
+  {
+    name: "Sharlene Bush",
+    email: "sharlenebush@tubesys.com",
+    eyeColor: "blue",
+    friends: ["Briana Decker", "Sharron Pace"],
+    isActive: true,
+    balance: 3821,
+    gender: "female",
+    age: 34
+  },
+  {
+    name: "Ross Vazquez",
+    email: "rossvazquez@xinware.com",
+    eyeColor: "green",
+    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+    isActive: false,
+    balance: 3793,
+    gender: "male",
+    age: 24
+  },
+  {
+    name: "Elma Head",
+    email: "elmahead@omatom.com",
+    eyeColor: "green",
+    friends: ["Goldie Gentry", "Aisha Tran"],
+    isActive: true,
+    balance: 2278,
+    gender: "female",
+    age: 21
+  },
+  {
+    name: "Carey Barr",
+    email: "careybarr@nurali.com",
+    eyeColor: "blue",
+    friends: ["Jordan Sampson", "Eddie Strong"],
+    isActive: true,
+    balance: 3951,
+    gender: "male",
+    age: 27
+  },
+  {
+    name: "Blackburn Dotson",
+    email: "blackburndotson@furnigeer.com",
+    eyeColor: "brown",
+    friends: ["Jacklyn Lucas", "Linda Chapman"],
+    isActive: false,
+    balance: 1498,
+    gender: "male",
+    age: 38
+  },
+  {
+    name: "Sheree Anthony",
+    email: "shereeanthony@kog.com",
+    eyeColor: "brown",
+    friends: ["Goldie Gentry", "Briana Decker"],
+    isActive: true,
+    balance: 2764,
+    gender: "female",
+    age: 39
+  }
+];
+// const getFriends = (users) => {
+   
+//    const allFriends = users.flatMap((item) => item.friends ); 
+//    const unicFriends = allFriends.filter((item,index,array) => array.indexOf(item) === index );
+//    console.log(allFriends);
+//    console.log(unicFriends);
+   
+//    return unicFriends;
+//  };
+
+// // Change code below this line
+// const calculateTotalBalance = users => {
+//    const a = users.reduce((startVal,item) => {return startVal + item.balance;},0)
+//    return a;
+// };
+// // Change code above this line
+
+
+// Change code below this line
+const sortByDescendingFriendCount = users => {
+      const result = [...users].sort((item1,item2)=>item1.friends.length - item2.friends.length);
+  return result;
+};
+// Change code above this line
+
+
+
+
+
+
+
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     rating: 8.38,
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     rating: 8.51,
+//   },
+//   {
+//     title: "The Dream of a Ridiculous Man",
+//     author: "Fyodor Dostoevsky",
+//     rating: 7.75,
+//   },
+//   { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+//   {
+//     title: "The Dreams in the Witch House",
+//     author: "Howard Lovecraft",
+//     rating: 8.67,
+//   },
+// ];
+// const MIN_BOOK_RATING = 8;
+// // Change code below this line
+// // const filteredByRating = [...books].filter((it1)=>it1.rating > MIN_BOOK_RATING);
+// // const resultMap = filteredByRating.sort((item1,item2)=>item1.author.localeCompare(item2.author));
+// const names = (([...books].filter((it1)=>it1.rating > MIN_BOOK_RATING)).sort((item1,item2)=>item1.author.localeCompare(item2.author))).map((item)=>item.author);
+// console.log(names);
+// // console.log(resultMap);
+
+
+
+
+
+
+const people = [
+  {
+    name: "Moore Hensley",
+    email: "moorehensley@indexia.com",
+    eyeColor: "blue",
+    friends: ["Sharron Pace"],
+    isActive: false,
+    balance: 2811,
+    gender: "male"
+  },
+  {
+    name: "Sharlene Bush",
+    email: "sharlenebush@tubesys.com",
+    eyeColor: "blue",
+    friends: ["Briana Decker", "Sharron Pace"],
+    isActive: true,
+    balance: 3821,
+    gender: "female"
+  },
+  {
+    name: "Ross Vazquez",
+    email: "rossvazquez@xinware.com",
+    eyeColor: "green",
+    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+    isActive: false,
+    balance: 3793,
+    gender: "male"
+  },
+  {
+    name: "Elma Head",
+    email: "elmahead@omatom.com",
+    eyeColor: "green",
+    friends: ["Goldie Gentry", "Aisha Tran"],
+    isActive: true,
+    balance: 2278,
+    gender: "female"
+  },
+  {
+    name: "Carey Barr",
+    email: "careybarr@nurali.com",
+    eyeColor: "blue",
+    friends: ["Jordan Sampson", "Eddie Strong", "Adrian Cross"],
+    isActive: true,
+    balance: 3951,
+    gender: "male"
+  },
+  {
+    name: "Blackburn Dotson",
+    email: "blackburndotson@furnigeer.com",
+    eyeColor: "brown",
+    friends: ["Jacklyn Lucas", "Linda Chapman", "Adrian Cross", "Solomon Fokes"],
+    isActive: false,
+    balance: 1498,
+    gender: "male"
+  },
+  {
+    name: "Sheree Anthony",
+    email: "shereeanthony@kog.com",
+    eyeColor: "brown",
+    friends: ["Goldie Gentry", "Briana Decker"],
+    isActive: true,
+    balance: 2764,
+    gender: "female"
+  }
+];
+
+const getNamesSortedByFriendCount = users => {
+    const result = [...users]
+      .sort((a,b)=>a.friends.length > b.friends.length)
+      .map((i)=>i.name);
+    return result;
+};
+
+const getTotalBalanceByGender = (users, gender) => {
+   const result = [...users]
+  .filter((element) => element.gender === gender)
+  .reduce((star,elem) =>{return star + elem.balance},0);
+  return result;
+};
+
+
+class Storage{
+   constructor(itemArray){
+    this.itemArray = itemArray;
+    }
+  getItems(){
+    return this.itemArray;
+  };
+  addItem(item){
+    this.itemArray.push(item);
+  };
+    removeItem(item){
+      const a = this.itemArray.indexOf(item);
+    return this.itemArray.splice(a,1);
+    
+  };
+};
+
+
+// Change code above this line
+// const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]);
+// console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
+// storage.addItem("Droid");
+// console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
+// storage.removeItem("Prolonger");
+// console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
+// const abba = new Storage(["firstsong", "secondsong", "Bonus"]);
+// console.log(abba.getItems());
+
+
+
+
+class StringBuilder {
+   constructor(initialValue){
+    this.value = initialValue;
+    };
+  getValue(){
+    return this.value;
+  };
+padEnd(str){
+  return this.value=this.value + str;
+};
+  padStart(str){
+  return this.value=str + this.value;
+};
+    padBoth(str){
+  return this.value=str + this.value + str;
+};
+};
+// Change code above this line
+const builder = new StringBuilder(".");
+console.log(builder.getValue()); // "."
+builder.padStart("^");
+console.log(builder.getValue()); // "^."
+builder.padEnd("^");
+console.log(builder.getValue()); // "^.^"
+builder.padBoth("=");
+console.log(builder.getValue()); // "=^.^="
+const builder1 = new StringBuilder(".");
+console.log(builder1.getValue());
+console.log(builder.getValue());
+
+
+
+class Car {
+  // Change code below this line
+  #brand;
+  constructor({ brand, model, price }) {
+    this.#brand = brand;
+    this.model = model;
+    this.price = price;
+  }
+getBrand(){
+  return this.#brand;
+}
+changeBrand(newBrand){
+  this.#brand = newBrand; 
+}
+  // Change code above this line
+}
+
+const getLogo = document.querySelector('h1');
+// console.dir(getLogo);
+const getListParams = document.querySelector('ul');
+console.log(getListParams.classList);
+// console.dir(getListParams);
+
+const getList = document.querySelectorAll("li");
+//
+const changeInnerText = getList.forEach((value, index, array) => {value.innerText = value.innerText+ " - " + "выбросить"});
+// const changeTextContent = getList.forEach((value, index, array) => {console.dir(value);});
+
+
+
+
+const closeBtn = document.querySelector('button[data-action="close"]');
+console.log(closeBtn.dataset.action); //close
+console.dir(closeBtn);
+
+
+
+    </script>
+</body>
+</html>
